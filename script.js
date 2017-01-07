@@ -87,28 +87,6 @@ function pixelGlass() {
 
   //---------------------------------------------
 
-  function getCurrent(name, defaultValue) {
-    var itemName = [prefix, name].join('-');
-    var localStorageVal = localStorage[ itemName ];
-    return localStorageVal ? localStorageVal : defaultValue;
-  }
-
-  //---------------------------------------------
-
-  function saveLocalStorage(name, value) {
-    var itemName = [prefix, name].join('-');
-    localStorage[itemName] = value;
-  }
-
-  //---------------------------------------------
-
-  function getBodyOpacity() {
-    var opacityStr = getComputedStyle(doc.body).opacity;
-    return +opacityStr;
-  }
-
-  //---------------------------------------------
-
   function init() {
     addExternalCSS();
     createContolsPanel();
@@ -117,32 +95,21 @@ function pixelGlass() {
 
   //---------------------------------------------
 
-  function applyCurrents() {
-    for (var key in targets ) {
-      var target = targets[ key ];
-      var current = currents[ key ];
-
-      if (target.attr === 'data') {
-        target.elem.dataset[ key ] = current;
-      }
-      else if (target.attr === 'style') {
-        target.elem.style[ key ] = current;
-      }
-    }
-
-    if(currents.state === 'off') {
-      disableInputs();
-    }
-  }
-
-  //---------------------------------------------
-
   function createContolsPanel() {
     controlsPanel = doc.createElement('div');
     controlsPanel.classList.add(panelClass);
     doc.documentElement.appendChild(controlsPanel);
+    var sides = ['top', 'right', 'bottom', 'left'];
 
-    initControls()
+    sides.forEach(function(item) {
+      var itemVal = getCurrent(item, '');
+      if ( itemVal ) {
+        controlsPanel.style[ item ] = itemVal;
+      }
+    });
+    console.log('top: ', getCurrent('top',''));
+
+    initControls();
   }
 
   //---------------------------------------------
@@ -152,7 +119,7 @@ function pixelGlass() {
     createButton(paramsFilters);
     createInputNumber(paramsOpacity);
 
-    // createDragButton();
+    createDragButton();
   }
 
   //---------------------------------------------
@@ -259,19 +226,52 @@ function pixelGlass() {
 
     controlsPanel.appendChild(input);
 
-    // console.dir(controlsPanel);
+    input.onmousedown = function () {
+      //Place it here to get real sizes after
+      // external styles has been loaded
+      var offsetTop = this.offsetTop;
+      var offsetLeft = controlsPanel.clientWidth - this.clientWidth;
+      var styles = getComputedStyle(controlsPanel);
 
-    input.onclick = function ( ev ) {
-      var x = (ev.clientX)+ 'px';
-      var y = ev.clientY + 'px';
+      controlsPanel.style['top'] = styles.top;
+      controlsPanel.style['left'] = styles.left;
+      controlsPanel.style['right'] = 'auto';
+      controlsPanel.style['bottom'] = 'auto';
 
-      // console.log('x: ',x, 'y: ',y);
+      doc.onmousemove = function ( ev ) {
+        var x = (ev.clientX - offsetLeft ) + 'px';
+        var y = (ev.clientY) + 'px'; // - offsetTop
 
-      controlsPanel.style['left'] = x;
-      controlsPanel.style['top'] = y;
+        controlsPanel.style['left'] = x;
+        controlsPanel.style['top'] = y;
+      }
+    }
 
-      // console.log( 'left: ',controlsPanel.style.left );
-      // console.log( 'top: ',controlsPanel.style.top );
+    input.onmouseup = function () {
+      var styles = getComputedStyle(controlsPanel);
+      var left = +styles.left.replace(/px/,'');
+      var right = +styles.right.replace(/px/,'');
+      var top = +styles.top.replace(/px/,'');
+      var bottom = +styles.bottom.replace(/px/,'');
+
+      if ( left > right ) {
+        saveLocalStorage('left', 'auto');
+        saveLocalStorage('right', styles.right);
+      }
+      else {
+        saveLocalStorage('left', styles.left);
+        saveLocalStorage('right', 'auto'); //'auto' needs to override default position;
+      }
+      if ( top > bottom ) {
+        saveLocalStorage('top', 'auto');
+        saveLocalStorage('bottom', styles.bottom);
+      }
+      else {
+        saveLocalStorage('top', styles.top);
+        saveLocalStorage('bottom', 'auto');
+      }
+
+      doc.onmousemove = null;
     }
   }
 
@@ -293,6 +293,28 @@ function pixelGlass() {
 
   //---------------------------------------------
 
+  function getCurrent(name, defaultValue) {
+    var itemName = [prefix, name].join('-');
+    var localStorageVal = localStorage[ itemName ];
+    return localStorageVal ? localStorageVal : defaultValue;
+  }
+
+  //---------------------------------------------
+
+  function saveLocalStorage(name, value) {
+    var itemName = [prefix, name].join('-');
+    localStorage[itemName] = value;
+  }
+
+  //---------------------------------------------
+
+  function getBodyOpacity() {
+    var opacityStr = getComputedStyle(doc.body).opacity;
+    return +opacityStr;
+  }
+
+  //---------------------------------------------
+
   function addExternalCSS() {
     var styleElem = doc.createElement('style');
     var cssLink = doc.createElement('link');
@@ -300,6 +322,26 @@ function pixelGlass() {
     cssLink.setAttribute('href', '../pixel-glass-js/styles.css');
 
     doc.head.appendChild(cssLink);
+  }
+
+  //---------------------------------------------
+
+  function applyCurrents() {
+    for (var key in targets ) {
+      var target = targets[ key ];
+      var current = currents[ key ];
+
+      if (target.attr === 'data') {
+        target.elem.dataset[ key ] = current;
+      }
+      else if (target.attr === 'style') {
+        target.elem.style[ key ] = current;
+      }
+    }
+
+    if(currents.state === 'off') {
+      disableInputs();
+    }
   }
 
   //---------------------------------------------

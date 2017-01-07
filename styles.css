@@ -26,7 +26,9 @@ BODY[data-filter="invert"] {
   z-index: 1000;
   display: flex;
   justify-content: space-between;
-  padding: 5px 0 5px 5px;
+  min-width: 175px;
+  padding: 5px;
+  box-sizing: border-box;
   border: 2px solid hsla(0,0%,0%,.25);
   border-radius: 5px;
   background: hsla(0,0%,100%,.8);
@@ -64,6 +66,7 @@ BODY[data-filter="invert"] {
   box-shadow: 0 2px 4px hsla(0,0%,0%,0.4) inset,
               0 -4px 4px hsla(90,100%,70%,1) inset;
 }
+
 .controls-panel__control--button:enabled:focus {
   background: yellowgreen;
   box-shadow: 0 2px 4px hsla(0,0%,0%,0.4) inset,
@@ -78,6 +81,8 @@ BODY[data-filter="invert"] {
 }
 
 .controls-panel__control--number {
+  max-width: 2.7em;
+  padding-right: 0;
   text-align: right;
 }
 .controls-panel__control--number:focus {
@@ -86,13 +91,24 @@ BODY[data-filter="invert"] {
 
 .controls-panel__control--drag-n-drop {
   position: relative;
-  width: 20px;
+  width: 19px;
   margin: 0;
   padding: 0;
   background: transparent;
   /*border: 0;*/
-  cursor: pointer;
+  cursor: move;
 }
+
+.controls-panel__control--drag-n-drop:active {
+  background: yellowgreen;
+  box-shadow: 0 2px 4px hsla(0,0%,0%,0.4) inset,
+              0 -4px 4px hsla(90,100%,70%,1) inset,
+              0 0 0 3px hsl(75,100%,45%);
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grab;
+}
+
 
 .controls-panel__control--drag-n-drop::after {
   content: '';
@@ -109,4 +125,5 @@ BODY[data-filter="invert"] {
   background:hsla(0,0%,0%,.5);
   box-shadow: 0 6px 0 hsla(0,0%,0%,.5),
               0 -6px 0 hsla(0,0%,0%,.5);
+  pointer-events: none;
   }
