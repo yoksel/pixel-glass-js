@@ -26,11 +26,11 @@ BODY[data-filter="invert"] {
   z-index: 1000;
   display: flex;
   justify-content: space-between;
-  padding: 5px;
-  border: 2px solid rgba(0,0,0,.25);
+  padding: 5px 0 5px 5px;
+  border: 2px solid hsla(0,0%,0%,.25);
   border-radius: 5px;
-  background: rgba(255,255,255,.8);
-  box-shadow: 0 0 5px rgba(0,0,0,.5);
+  background: hsla(0,0%,100%,.8);
+  box-shadow: 0 0 5px hsla(0,0%,0%,.5);
   font: 14px/1.2 Arial, sans-serif;
   text-transform: none;
   outline: none;
@@ -40,25 +40,48 @@ BODY[data-filter="invert"] {
 .controls-panel__control {
   margin-right: 5px;
   padding: 3px;
-  border: 2px solid rgba(0,0,0,.25);
+  border: 2px solid hsla(0,0%,0%,.25);
   border-radius: 5px;
   outline: none;
 }
 .controls-panel__control:focus {
-  box-shadow: 0 0 3px 3px gold;
+  box-shadow: 0 0 0 3px hsl(75,100%,45%);
+}
+.controls-panel__control:disabled {
+  background: transparent;
+  opacity: .35;
+  cursor: default;
 }
 
 .controls-panel__control--button {
   padding-left: 5px;
   padding-right: 5px;
-  background: yellowgreen;
-  color: rgba(0,0,0,.9);
+  color: hsla(0,0%,0%,.9);
   cursor: pointer;
 }
+.controls-panel__control--button:enabled {
+  background: yellowgreen;
+  box-shadow: 0 2px 4px hsla(0,0%,0%,0.4) inset,
+              0 -4px 4px hsla(90,100%,70%,1) inset;
+}
+.controls-panel__control--button:enabled:focus {
+  background: yellowgreen;
+  box-shadow: 0 2px 4px hsla(0,0%,0%,0.4) inset,
+              0 -4px 4px hsla(90,100%,70%,1) inset,
+              0 0 0 3px hsl(75,100%,45%);
+}
 
-.controls-panel__control[data-state-num="0"] {
+.controls-panel__control--button[data-state-num="0"]:enabled {
   background: #DDD;
-  opacity: .5;
+  box-shadow: none;
+  opacity: .8;
+}
+
+.controls-panel__control--number {
+  text-align: right;
+}
+.controls-panel__control--number:focus {
+  border-color: hsla(0,0%,0%,.35);
 }
 
 .controls-panel__control--drag-n-drop {
@@ -83,7 +106,7 @@ BODY[data-filter="invert"] {
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background:rgba(0,0,0,.5);
-  box-shadow: 0 6px 0 rgba(0,0,0,.5),
-              0 -6px 0 rgba(0,0,0,.5);
+  background:hsla(0,0%,0%,.5);
+  box-shadow: 0 6px 0 hsla(0,0%,0%,.5),
+              0 -6px 0 hsla(0,0%,0%,.5);
   }

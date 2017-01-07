@@ -1,8 +1,5 @@
 // TODO
-// 1. Сохранять настройки
-// 2. Сделать выключение подложки
-// 3. Сделать контролы кнопками
-// 4. Если показ выключен, изменение любой опции включает
+// 1. Add drad&drop control
 
 function pixelGlass() {
 
@@ -14,6 +11,7 @@ function pixelGlass() {
   var controlsPanel;
   var bodyContentWrapper;
   var panelClass = 'controls-panel';
+  var canBeDisabled = [];
 
   var prefix = 'pg';
   var filtersList = ['none', 'invert'];
@@ -49,6 +47,7 @@ function pixelGlass() {
     target: targets['state'],
     type: 'button',
     list: statesList,
+    canDisableAll: true,
     attrs: {
       tabindex: 1,
     }
@@ -82,6 +81,8 @@ function pixelGlass() {
     }
   };
 
+  //---------------------------------------------
+
   init();
 
   //---------------------------------------------
@@ -110,8 +111,8 @@ function pixelGlass() {
 
   function init() {
     addExternalCSS();
-    applyCurrents();
     createContolsPanel();
+    applyCurrents();
   }
 
   //---------------------------------------------
@@ -127,6 +128,10 @@ function pixelGlass() {
       else if (target.attr === 'style') {
         target.elem.style[ key ] = current;
       }
+    }
+
+    if(currents.state === 'off') {
+      disableInputs();
     }
   }
 
@@ -147,7 +152,7 @@ function pixelGlass() {
     createButton(paramsFilters);
     createInputNumber(paramsOpacity);
 
-    createDragButton();
+    // createDragButton();
   }
 
   //---------------------------------------------
@@ -163,6 +168,7 @@ function pixelGlass() {
     var currentVal = currents[itemName];
     var attrs = params.attrs;
     var currentNum = list.indexOf(currentVal);
+    var canDisableAll = params.canDisableAll;
 
     var id = itemName;
     var input = doc.createElement(elemTag);
@@ -181,6 +187,10 @@ function pixelGlass() {
       input.innerHTML = elemText;
     }
 
+    if ( !canDisableAll ) {
+      canBeDisabled.push(input);
+    }
+
     controlsPanel.appendChild(input);
 
     input.onclick = function() {
@@ -194,6 +204,15 @@ function pixelGlass() {
       input.dataset['stateNum'] = currentNum;
       params.target.elem.dataset[itemName] = currentVal;
       saveLocalStorage(itemName, currentVal);
+
+      if (canDisableAll && canDisableAll === true) {
+        if (currentVal === 'off'){
+          disableInputs();
+        }
+        else {
+          enableInputs();
+        }
+      }
     };
   }
 
@@ -204,6 +223,7 @@ function pixelGlass() {
     var attrs = params.attrs;
     var type = params.type;
     var setAttr = params.setAttr;
+    var canDisableAll = params.canDisableAll;
 
     var id = itemName;
     var input = doc.createElement('input');
@@ -215,6 +235,10 @@ function pixelGlass() {
       input.setAttribute(attr, attrs[attr]);
     }
     input.setAttribute('value', currents[itemName]);
+
+    if ( !canDisableAll ) {
+      canBeDisabled.push(input);
+    }
 
     controlsPanel.appendChild(input);
 
@@ -249,6 +273,22 @@ function pixelGlass() {
       // console.log( 'left: ',controlsPanel.style.left );
       // console.log( 'top: ',controlsPanel.style.top );
     }
+  }
+
+  //---------------------------------------------
+
+  function disableInputs() {
+    canBeDisabled.forEach(function(item) {
+      item.setAttribute('disabled', '')
+    });
+  }
+
+  //---------------------------------------------
+
+  function enableInputs() {
+    canBeDisabled.forEach(function(item) {
+      item.removeAttribute('disabled')
+    });
   }
 
   //---------------------------------------------
