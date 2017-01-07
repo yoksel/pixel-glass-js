@@ -1,0 +1,89 @@
+/* STATES & MODES
+--------------------------------------------- */
+
+HTML[data-state="off"] {
+  background: none;
+}
+
+HTML[data-state="off"] BODY {
+  opacity: 1 !important;
+  filter: none;
+}
+
+
+BODY[data-filter="invert"] {
+  filter: invert(1);
+}
+
+/* CONTROLS
+--------------------------------------------- */
+
+.controls-panel {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border: 2px solid rgba(0,0,0,.25);
+  border-radius: 5px;
+  background: rgba(255,255,255,.8);
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+  font: 14px/1.2 Arial, sans-serif;
+  text-transform: none;
+  outline: none;
+  color: #000;
+}
+
+.controls-panel__control {
+  margin-right: 5px;
+  padding: 3px;
+  border: 2px solid rgba(0,0,0,.25);
+  border-radius: 5px;
+  outline: none;
+}
+.controls-panel__control:focus {
+  box-shadow: 0 0 3px 3px gold;
+}
+
+.controls-panel__control--button {
+  padding-left: 5px;
+  padding-right: 5px;
+  background: yellowgreen;
+  color: rgba(0,0,0,.9);
+  cursor: pointer;
+}
+
+.controls-panel__control[data-state-num="0"] {
+  background: #DDD;
+  opacity: .5;
+}
+
+.controls-panel__control--drag-n-drop {
+  position: relative;
+  width: 20px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  /*border: 0;*/
+  cursor: pointer;
+}
+
+.controls-panel__control--drag-n-drop::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background:rgba(0,0,0,.5);
+  box-shadow: 0 6px 0 rgba(0,0,0,.5),
+              0 -6px 0 rgba(0,0,0,.5);
+  }
