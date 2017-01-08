@@ -5,6 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pixel Glass</title>
   <link rel="stylesheet" href="demo.css">
+
+  <!-- PixelGlass BEGIN -->
+  <style>
+    HTML {
+      background: url( 'img/preview/pink-index-mobile.jpg' ) 50% 0 no-repeat;
+    }
+
+    @media (min-width: 660px) {
+      HTML {
+        background-image: url( 'img/preview/pink-index-tablet.jpg' );
+      }
+    }
+    @media (min-width: 960px) {
+      HTML {
+        background-image: url( 'img/preview/pink-index-desktop.jpg' );
+      }
+    }
+
+    BODY {
+      /*opacity: .5;*/
+    }
+  </style>
+  <!-- <script src="script.js"></script> -->
+  <!-- PixelGlass END -->
 </head>
 <body>
   <div class="page-wrapper">
@@ -26,7 +50,11 @@
       </main>
 
       <aside class="page-aside">
-        Стихотворение представляет собой пастиш. Лирика, в первом приближении, диссонирует конформизм, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.
+        <div class="page-aside__content">
+          Стихотворение представляет собой пастиш. Лирика, в первом приближении, диссонирует конформизм, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.
+        </div>
+
+        <div class="page-aside__decor"></div>
       </aside>
     </div>
 
