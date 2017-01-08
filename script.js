@@ -1,11 +1,6 @@
-// TODO
-// 1. Add drad&drop control
-
 function pixelGlass() {
 
   'use strict';
-
-  console.log('hello');
 
   var doc = document;
   var controlsPanel;
@@ -44,7 +39,7 @@ function pixelGlass() {
     elemText: 'on',
     listName: 'states',
     itemName: 'state',
-    target: targets['state'],
+    target: targets.state,
     type: 'button',
     list: statesList,
     canDisableAll: true,
@@ -59,7 +54,7 @@ function pixelGlass() {
     elemText: 'invert',
     listName: 'filters',
     itemName: 'filter',
-    target: targets['filter'],
+    target: targets.filter,
     type: 'button',
     list: filtersList,
     attrs: {
@@ -71,7 +66,7 @@ function pixelGlass() {
   var paramsOpacity = {
     itemName: 'opacity',
     type: 'number',
-    target: targets['opacity'],
+    target: targets.opacity,
     setAttr: 'style',
     attrs: {
       min: 0,
@@ -107,7 +102,6 @@ function pixelGlass() {
         controlsPanel.style[ item ] = itemVal;
       }
     });
-    console.log('top: ', getCurrent('top',''));
 
     initControls();
   }
@@ -142,7 +136,7 @@ function pixelGlass() {
     input.classList.add(panelClass + '__control', panelClass + '__control--' + type);
     input.setAttribute('type', type);
     input.setAttribute('id', id);
-    input.dataset['stateNum'] = currentNum;
+    input.dataset.stateNum = currentNum;
 
     if ( attrs ) {
       for (var attr in attrs) {
@@ -168,7 +162,7 @@ function pixelGlass() {
       currentNum = +!currentNum;
       currentVal = list[currentNum];
 
-      input.dataset['stateNum'] = currentNum;
+      input.dataset.stateNum = currentNum;
       params.target.elem.dataset[itemName] = currentVal;
       saveLocalStorage(itemName, currentVal);
 
@@ -233,19 +227,19 @@ function pixelGlass() {
       var offsetLeft = controlsPanel.clientWidth - this.clientWidth;
       var styles = getComputedStyle(controlsPanel);
 
-      controlsPanel.style['top'] = styles.top;
-      controlsPanel.style['left'] = styles.left;
-      controlsPanel.style['right'] = 'auto';
-      controlsPanel.style['bottom'] = 'auto';
+      controlsPanel.style.top = styles.top;
+      controlsPanel.style.left = styles.left;
+      controlsPanel.style.right = 'auto';
+      controlsPanel.style.bottom = 'auto';
 
       doc.onmousemove = function ( ev ) {
         var x = (ev.clientX - offsetLeft ) + 'px';
-        var y = (ev.clientY) + 'px'; // - offsetTop
+        var y = (ev.clientY) + 'px';
 
-        controlsPanel.style['left'] = x;
-        controlsPanel.style['top'] = y;
-      }
-    }
+        controlsPanel.style.left = x;
+        controlsPanel.style.top = y;
+      };
+    };
 
     input.onmouseup = function () {
       var styles = getComputedStyle(controlsPanel);
@@ -272,14 +266,14 @@ function pixelGlass() {
       }
 
       doc.onmousemove = null;
-    }
+    };
   }
 
   //---------------------------------------------
 
   function disableInputs() {
     canBeDisabled.forEach(function(item) {
-      item.setAttribute('disabled', '')
+      item.setAttribute('disabled', '');
     });
   }
 
@@ -287,7 +281,7 @@ function pixelGlass() {
 
   function enableInputs() {
     canBeDisabled.forEach(function(item) {
-      item.removeAttribute('disabled')
+      item.removeAttribute('disabled');
     });
   }
 
@@ -349,4 +343,4 @@ function pixelGlass() {
 
 window.onload = function () {
   pixelGlass();
-}
+};
