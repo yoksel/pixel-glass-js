@@ -1,3 +1,6 @@
+// TODO
+// Fix binding to the right side after moving controlsPanel
+
 function pixelGlass() {
 
   'use strict';

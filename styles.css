@@ -45,6 +45,7 @@ BODY[data-filter="invert"] {
   border: 2px solid hsla(0,0%,0%,.25);
   border-radius: 5px;
   outline: none;
+  font: inherit;
 }
 .controls-panel__control:focus {
   box-shadow: 0 0 0 3px hsl(75,100%,45%);
@@ -95,7 +96,6 @@ BODY[data-filter="invert"] {
   margin: 0;
   padding: 0;
   background: transparent;
-  /*border: 0;*/
   cursor: move;
 }
 
