@@ -41,6 +41,7 @@ H2:first-child {
 .page-wrapper {
   max-width: 100%;
   padding: 2rem 1rem;
+  box-sizing: border-box;
   background: #FFF;
   box-shadow: 0 3px 7px 3px hsla(0,0%,0%,.4);
   transition: all 1s;
