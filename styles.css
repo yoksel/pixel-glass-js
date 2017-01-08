@@ -84,6 +84,7 @@ BODY[data-filter="invert"] {
 .controls-panel__control--number {
   max-width: 2.7em;
   padding-right: 0;
+  box-sizing: content-box;
   text-align: right;
 }
 .controls-panel__control--number:focus {
