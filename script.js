@@ -1,6 +1,3 @@
-// TODO
-// Fix binding to the right side after moving controlsPanel
-
 function pixelGlass() {
 
   'use strict';
@@ -254,6 +251,9 @@ function pixelGlass() {
       if ( left > right ) {
         saveLocalStorage('left', 'auto');
         saveLocalStorage('right', styles.right);
+
+        controlsPanel.style.right = styles.right;
+        controlsPanel.style.left = 'auto';
       }
       else {
         saveLocalStorage('left', styles.left);
@@ -262,6 +262,9 @@ function pixelGlass() {
       if ( top > bottom ) {
         saveLocalStorage('top', 'auto');
         saveLocalStorage('bottom', styles.bottom);
+
+        controlsPanel.style.bottom = styles.bottom;
+        controlsPanel.style.top = 'auto';
       }
       else {
         saveLocalStorage('top', styles.top);
