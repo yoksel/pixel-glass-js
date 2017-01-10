@@ -40,6 +40,19 @@ LI {
   margin-bottom: 1.5rem;
 }
 
+.visuallyhidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 /* CODES
 --------------------------------------------- */
 .code {
@@ -117,18 +130,18 @@ H2:first-child {
 
 .page-header {
   margin-bottom: 3rem;
-  padding: 1rem;
   box-sizing: border-box;
   text-align: center;
-  border-radius: 15px;
-  box-shadow: inset 0 3px 7px 3px hsla(0,0%,0%,.4);
-  text-shadow: 0 3px 5px hsla(0,0%,0%,.4);
 }
 
-.page-title {
-  color: #FFF;
+.page-header__logo {
+  width: 100%;
 }
 
+.page-header__logo-text {
+  font-size: 14rem;
+  font-family: 'Work Sans', sans-serif;
+}
 .page-nav A {
   color: #FFF;
 }
@@ -210,12 +223,21 @@ H2:first-child {
 }
 
 .section__title::before {
-  content: '';
+  /*content: '';*/
   flex-shrink: 0;
   flex-grow: 0;
   width: .3em;
   margin-right: .75rem;
   background: hsl(180,60%,40%);
+  border-radius: 5px;
+}
+
+.section__title::after {
+  content: '';
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin-left: 2rem;
+  background: #EEE;
   border-radius: 5px;
 }
 
@@ -311,10 +333,6 @@ H2:first-child {
     border-width: 0 0 0 1px;
     font-size: .9em;
   }
-
-  .page-aside__content {
-    /*color: #999;*/
-  }
 }
 
 .page-aside__decor {
@@ -327,61 +345,12 @@ H2:first-child {
   box-shadow: inset 0 3px 7px 3px hsla(0,0%,0%,.4);
 }
 
-.page-aside__decor::after {
-  content: '';
-  flex-grow: 1;
-  min-height: 5rem;
-  width: 100%;
-  min-width: 10rem;
-  background: url(img/leaves-1.png);
-  border-radius: 10px;
-  box-shadow: 0 3px 7px 3px hsla(0,0%,0%,.4);
-}
-
-@media ( min-width: 500px ) {
-  .page-aside__decor {
-    margin-right: 2rem;
-    margin-bottom: 0;
-  }
-  .page-aside__decor::after {
-    min-height: 10rem;
-    background: url(img/leaves-2.png);
-  }
-}
-@media ( min-width: 800px ) {
-  .page-aside__decor {
-    order: 0;
-    margin-right: 0;
-    margin-top: 2rem;
-    padding: 2rem;
-  }
-  .page-aside__decor::after {
-    background: url(img/leaves-4.png);
-  }
-}
-
-@media ( min-width: 1000px ) {
-  .page-aside__decor::after {
-    min-height: 12rem;
-    background: url(img/leaves-3.png);
-  }
-}
-
 /* FOOTER
 --------------------------------------------- */
 
 .page-footer {
   margin-top: 2rem;
   margin-bottom: 3rem;
-}
-
-.page-footer:before {
-  content: '';
-  display: block;
-  height: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 15px;
-  box-shadow: inset 0 3px 7px 3px hsla(0,0%,0%,.4);
 }
 
 .page-footer__links {
@@ -391,44 +360,53 @@ H2:first-child {
   margin: 0 1rem;
 }
 
+/* DECOR
+--------------------------------------------- */
+
+.page-footer::before {
+  content: '';
+  display: block;
+  height: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+}
+
+
 /* BACKGROUNDS
 --------------------------------------------- */
 
 BODY,
-.page-header,
-.page-footer:before,
-.page-aside__decor,
+.page-header__logo,
+.page-footer::before,
 .sticky-point {
-  background-color: hsl(180,60%,40%);
+  background: #FFF;
   background-image:
-    linear-gradient(to right,
-      hsla( 0,100%,100%,.05) 30%, transparent 30%),
-    linear-gradient(to right,
-      hsla( 0,100%,100%,.07) 40%, transparent 40%),
-    linear-gradient(to right,
-      hsla( 0,100%,100%,.1) 50%, transparent 50%);
-  background-size: 31px 100%, 37px 100%, 47px 100%;
-  background-repeat: repeat;
-  background-position: 50% 0;
-  transition: background-color 1s;
-}
-
-@media ( min-width: 800px ) {
-  BODY,
-  .page-header,
-  .page-footer:before,
-  .page-aside__decor,
-  .sticky-point {
-    background-color: hsl(190,70%,35%);
-  }
-}
-
-@media ( min-width: 1000px ) {
-  BODY,
-  .page-header,
-  .page-footer:before,
-  .page-aside__decor,
-  .sticky-point {
-    background-color: hsl(200,80%,30%);
-  }
+    linear-gradient(to right, hsla(350, 100%, 50%, .3) 50%, transparent 50%),
+    linear-gradient(to right, hsla(300, 100%, 50%, .3) 50%, transparent 50%),
+    linear-gradient(to right, hsla(270, 100%, 50%, .3) 50%, transparent 50%),
+    linear-gradient(to right, hsla(250, 100%, 50%, .3) 50%, transparent 50%),
+    linear-gradient(to right, hsla(200, 100%, 50%, .3) 50%, transparent 50%),
+    linear-gradient(to right, hsla(120, 100%, 50%, .3) 50%, transparent 50%),
+    linear-gradient(to right, hsla(50, 100%, 50%, .3) 50%, transparent 50%),
+    linear-gradient(to right, hsla(0, 100%, 50%, .3) 50%, transparent 50%);
+  background-size:
+    7% 100%,
+    11% 100%,
+    13% 100%,
+    17% 100%,
+    23% 100%,
+    29% 100%,
+    31% 100%,
+    37% 100%;
+  background-position:
+    11rem 0,
+    -11rem 0,
+    21rem 0,
+    -21rem 0,
+    29rem 0,
+    -29rem 0,
+    31rem 0,
+    -31rem 0;
+    box-shadow: inset 0 3px 7px 3px hsla(0,0%,0%,.4);
+    background-attachment: fixed;
 }
