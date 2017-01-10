@@ -1,6 +1,7 @@
 HTML {
   font-size: 10px;
 }
+
 BODY {
   margin: 0;
   padding: 0;
@@ -10,22 +11,34 @@ BODY {
 
 /* LINKS
 --------------------------------------------- */
+
 A,
 A:visited {
-  color: hsl(180,60%,40%);
+  color: hsl(10,95%,60%);
+}
+
+A:hover {
+  text-decoration: none;
+}
+
+@media ( min-width: 600px ) {
+  A,
+  A:visited {
+    color: hsl(80,70%,40%);
+  }
 }
 
 @media ( min-width: 800px ) {
   A,
   A:visited {
-    color: hsl(190,70%,35%);
+    color: hsl(200,80%,40%);
   }
 }
 
 @media ( min-width: 1000px ) {
   A,
   A:visited {
-    color: hsl(200,80%,30%);
+    color: hsl(270,70%,60%);
   }
 }
 
@@ -55,6 +68,7 @@ LI {
 
 /* CODES
 --------------------------------------------- */
+
 .code {
   font-size: 12px;
 }
@@ -76,11 +90,6 @@ PRE {
 @media ( min-width: 600px ) {
   PRE {
     font-size: 14px;
-  }
-}
-@media ( min-width: 600px ) {
-  PRE {
-    /*font-size: 16px;*/
   }
 }
 
@@ -178,6 +187,9 @@ H2:first-child {
   }
 }
 
+/* MAIN
+--------------------------------------------- */
+
 .page-main {
   display: flex;
   justify-content: space-between;
@@ -219,16 +231,26 @@ H2:first-child {
   content: '';
   flex-shrink: 0;
   flex-grow: 1;
-  height: 26px;
-  margin-left: 1.5rem;
+  height: 14px;
+  margin-left: 1rem;
   background: #EEE;
   background: radial-gradient(circle at center, #333 10%, transparent 40%) 0 1px;
   background-size: 6px 6px;
 }
 
-@media ( min-width: 700px ) {
+@media ( min-width: 600px ) {
+  .section__title::after {
+    height: 20px;
+    margin-left: 1.5rem;
+  }
+}
+
+@media ( min-width: 800px ) {
   .section__title {
     font-size: 1.4em;
+  }
+  .section__title::after {
+    height: 26px;
   }
 }
 
@@ -282,16 +304,6 @@ H2:first-child {
   margin-bottom: 3rem;
 }
 
-.page-footer__links {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 0 1rem;
-}
-
-/* DECOR
---------------------------------------------- */
-
 .page-footer::before {
   content: '';
   display: block;
@@ -300,21 +312,26 @@ H2:first-child {
   border-radius: 10px;
 }
 
+.page-footer__links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: .9em;
+}
 
 /* BACKGROUNDS
 --------------------------------------------- */
-
 BODY,
 .page-header__logo,
 .page-footer::before,
 .sticky-point {
-  background: #FFF;
+  background: lemonchiffon;
   background-image:
     linear-gradient(to right, hsla(350, 100%, 50%, .3) 50%, transparent 50%),
     linear-gradient(to right, hsla(300, 100%, 50%, .3) 50%, transparent 50%),
     linear-gradient(to right, hsla(270, 100%, 50%, .3) 50%, transparent 50%),
     linear-gradient(to right, hsla(250, 100%, 50%, .3) 50%, transparent 50%),
-    linear-gradient(to right, hsla(200, 100%, 50%, .3) 50%, transparent 50%),
+    linear-gradient(to right, hsla(190, 100%, 50%, .3) 50%, transparent 50%),
     linear-gradient(to right, hsla(120, 100%, 50%, .3) 50%, transparent 50%),
     linear-gradient(to right, hsla(50, 100%, 50%, .3) 50%, transparent 50%),
     linear-gradient(to right, hsla(0, 100%, 50%, .3) 50%, transparent 50%);
