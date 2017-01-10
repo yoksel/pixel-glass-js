@@ -91,9 +91,18 @@ function pixelGlass() {
   //---------------------------------------------
 
   function createContolsPanel() {
+    var targetElem = doc.documentElement;
+
+    if ( doc.body.dataset.hasStickyPoint !== undefined ) {
+      var stickyPoint = doc.querySelector('.sticky-point');
+
+      if( stickyPoint && !localStorage['pg-released'] ) {
+        targetElem = stickyPoint;
+      }
+    }
     controlsPanel = doc.createElement('div');
     controlsPanel.classList.add(panelClass);
-    doc.documentElement.appendChild(controlsPanel);
+    targetElem.appendChild(controlsPanel);
     var sides = ['top', 'right', 'bottom', 'left'];
 
     sides.forEach(function(item) {
