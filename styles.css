@@ -31,7 +31,7 @@ BODY[data-filter="invert"] {
   box-sizing: border-box;
   border: 2px solid hsla(0,0%,0%,.25);
   border-radius: 5px;
-  background: hsla(0,0%,100%,.8);
+  background: hsla(0,0%,100%,.9);
   box-shadow: 0 0 5px hsla(0,0%,0%,.5);
   font: 14px/1.2 Arial, sans-serif;
   text-transform: none;
@@ -85,7 +85,7 @@ BODY[data-filter="invert"] {
   max-width: 2.7em;
   padding-right: 0;
   box-sizing: content-box;
-  text-align: right;
+  text-align: center;
 }
 .controls-panel__control--number:focus {
   border-color: hsla(0,0%,0%,.35);
