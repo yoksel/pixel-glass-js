@@ -6,7 +6,7 @@ BODY {
   margin: 0;
   padding: 0;
   font: 16px/1.4 Trebuchet MS, Arial, sans-serif;
-  transition: all 1s;
+  transition: all .5s;
 }
 
 /* LINKS
@@ -261,12 +261,15 @@ H2:first-child {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 30px;
   margin-top: 1rem;
-  padding: 1rem;
   box-shadow: inset 0 3px 7px 3px hsla(0,0%,0%,.3);
   border-radius: 10px;
   transition: all 1s;
+}
+
+.sticky-point--filled {
+  padding: 1rem;
+  min-height: 30px;
 }
 
 .sticky-point--collapse {
