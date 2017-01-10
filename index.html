@@ -39,45 +39,49 @@
       <h1 class="page-title visuallyhidden">Pixel Glass</h1>
       <svg class="svg page-header__logo"
       viewBox="0 0 770 110">
-        <filter id='inset-shadow'>
-          <!-- Shadow Offset -->
-          <feOffset dx='0' dy='3'/>
-          <!-- Shadow Blur -->
-          <feGaussianBlur stdDeviation='3' result='offset-blur'/>
-          <!-- Invert the drop shadow
-               to create an inner shadow -->
-          <feComposite operator='out' in='SourceGraphic' in2='offset-blur' result='inverse'/>
-          <!-- Color & Opacity -->
-          <feFlood flood-color='white' flood-opacity='1' result='color'/>
-          <!-- Clip color inside shadow -->
-          <feComposite operator='in' in='color' in2='inverse' result='shadow'/>
-          <!-- Put shadow over original object -->
-          <feComposite operator='over' in='shadow' in2='SourceGraphic'/>
-        </filter>
-        <mask id="mask-text-hole">
+        <defs>
+          <filter id='inset-shadow'>
+            <!-- Shadow Offset -->
+            <feOffset dx='0' dy='3'/>
+            <!-- Shadow Blur -->
+            <feGaussianBlur stdDeviation='3'
+              result='offset-blur'/>
+            <!-- Invert the drop shadow
+                 to create an inner shadow -->
+            <feComposite operator='out'
+              in='SourceGraphic' in2='offset-blur'
+              result='inverse'/>
+            <!-- Color & Opacity -->
+            <feFlood flood-color='white' flood-opacity='.25'
+              result='color'/>
+            <!-- Clip color inside shadow -->
+            <feComposite operator='in'
+              in='color' in2='inverse'
+              result='shadow'/>
+            <!-- Put shadow over original object -->
+            <feComposite operator='over'
+              in='shadow' in2='SourceGraphic'/>
+          </filter>
+
+          <symbol id="text">
+            <text class="page-header__logo-text"
+              y="50%" x="50%"
+              dy=".355em" text-anchor="middle">Pixel Glass</text>
+          </symbol>
+
+          <mask id="mask-text-hole">
+            <rect width="100%" height="100%"
+              fill="white"/>
+            <use xlink:href="#text" fill="black" filter="url(#inset-shadow)"/>
+          </mask>
+        </defs>
+
+        <g mask="url(#mask-text-hole)">
           <rect width="100%" height="100%"
             fill="white"/>
-          <text class="page-header__logo-text"
-            y="50%" x="50%"
-            dy=".355em" text-anchor="middle"
-            fill="black">Pixel Glass</text>
-        </mask>
-        <mask id="mask-text-shadow">
-          <text class="page-header__logo-text"
-            y="50%" x="50%"
-            dy=".355em" filter="url(#inset-shadow)"
-            text-anchor="middle" fill="black">Pixel Glass</text>
-        </mask>
-        <rect width="100%" height="100%"
-          fill="white" mask="url(#mask-text-hole)"/>
-        <rect width="100%" height="100%"
-          fill="hsla(0,0%,0%,.4)" mask="url(#mask-text-shadow)"/>
-        <text class="page-header__logo-text" y="50%" x="50%" dy=".355em" text-anchor="middle" fill="transparent"
-        >Pixel Glass</text>
-
-
+            <use xlink:href="#text" fill="black"/>
+        </g>
       </svg>
-
     </header>
 
     <div class="page-container">
