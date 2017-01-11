@@ -15,7 +15,7 @@ function pixelGlass() {
   var currents = {
     state: getCurrent('state', statesList[1]),
     filter: getCurrent('filter', filtersList[0]),
-    opacity: getCurrent('opacity', getBodyOpacity())
+    opacity: getCurrent('opacity', 0.5)
   };
 
   var targets = {
@@ -317,6 +317,7 @@ function pixelGlass() {
 
   //---------------------------------------------
 
+  // Not used
   function getBodyOpacity() {
     var opacityStr = getComputedStyle(doc.body).opacity;
     return +opacityStr;
