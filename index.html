@@ -96,37 +96,37 @@
             <li>Clone a <a href="https://github.com/yoksel/pixel-glass-js/">repo</a> with the script into your project folder:
 <pre><code class="code code--block">git clone git@github.com:yoksel/pixel-glass-js.git</code></pre>                      </li>
             <li>
-              Place your mock-ups into <code class="code code--inline">img</code> folder of your project.
+              Place your mock-ups into <code class="code code--inline">img</code> (or any other) folder of your project.
             </li>
             <li> Add this code into <code class="code code--inline">&lt;head></code> element of your page:
-<pre><code class="code code--block">&lt;!-- Pixel Glass -->
+<pre><code class="code code--block"><span class="code__comment">&lt;!-- Pixel Glass --></span>
 &lt;style>
   HTML {
     background-repeat: no-repeat;
     background-position:  50% 0;
-    // Mobile layout by default
+    <span class="code__comment">/* Mobile layout by default */</span>
     background-image: url( <mark>"img/320.png"</mark> );
   }
-  // Tablet
+  <span class="code__comment">/* Tablet */</span>
   @media ( <mark>min-width: 760px</mark> ) {
     HTML {
-      // Tablet layout
+      <span class="code__comment">/* Tablet layout */</span>
       background-image: url( <mark>"img/760.png"</mark> );
     }
   }
-  // Desktop
+  <span class="code__comment">/* Desktop */</span>
   @media ( <mark>min-width: 960px</mark> ) {
     HTML {
-      // Desktop layout
+      <span class="code__comment">/* Desktop layout */</span>
       background-image: url( <mark>"img/960.png"</mark> );
     }
   }
 &lt;/style>
 &lt;script src="pixel-glass-js/cript.js">&lt;/script>
-&lt;!-- // Pixel Glass -->
+<span class="code__comment">&lt;!-- // Pixel Glass --></span>
 </code></pre>
 
-          Adjust this code to make it fit your project: change media queries or add yours, change image URLs to actual files.
+            Edit highlighted text to make this code fit your project: change media queries or add yours, change image URLs to actual files.
             </li>
             <li>Save file, update a page and enjoy!</li>
           </ol>

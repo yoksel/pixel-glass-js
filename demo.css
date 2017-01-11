@@ -156,6 +156,11 @@ LI {
   font-size: 12px;
 }
 
+.code__comment {
+  font-style: italic;
+  color: #777;
+}
+
 PRE {
   overflow: auto;
   padding: .5rem;
