@@ -175,6 +175,7 @@ H2:first-child {
 .page-header__logo {
   width: 100%;
   font-size: 14rem;
+  font-weight: 800;
   font-family: 'Work Sans', sans-serif;
 }
 
