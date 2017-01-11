@@ -10,17 +10,17 @@
   <!-- PixelGlass BEGIN -->
   <style>
     HTML {
-      background: url( 'img/320.png' ) 50% 0 no-repeat;
+      background: url( "img/320.png" ) 50% 0 no-repeat;
     }
 
     @media (min-width: 768px) {
       HTML {
-        background-image: url( 'img/768.png' );
+        background-image: url( "img/768.png" );
       }
     }
     @media (min-width: 1024px) {
       HTML {
-        background-image: url( 'img/1024.png' );
+        background-image: url( "img/1024.png" );
       }
     }
   </style>
@@ -35,27 +35,27 @@
       <svg class="svg page-header__logo"
       viewBox="0 0 770 110">
         <defs>
-          <filter id='inset-shadow'>
+          <filter id="inset-shadow">
             <!-- Shadow Offset -->
-            <feOffset dx='0' dy='3'/>
+            <feOffset dx="0" dy="3"/>
             <!-- Shadow Blur -->
-            <feGaussianBlur stdDeviation='3'
-              result='offset-blur'/>
+            <feGaussianBlur stdDeviation="3"
+              result="offset-blur"/>
             <!-- Invert the drop shadow
                  to create an inner shadow -->
-            <feComposite operator='out'
-              in='SourceGraphic' in2='offset-blur'
-              result='inverse'/>
+            <feComposite operator="out"
+              in="SourceGraphic" in2="offset-blur"
+              result="inverse"/>
             <!-- Color & Opacity -->
-            <feFlood flood-color='white' flood-opacity='.25'
-              result='color'/>
+            <feFlood flood-color="white" flood-opacity=".25"
+              result="color"/>
             <!-- Clip color inside shadow -->
-            <feComposite operator='in'
-              in='color' in2='inverse'
-              result='shadow'/>
+            <feComposite operator="in"
+              in="color" in2="inverse"
+              result="shadow"/>
             <!-- Put shadow over original object -->
-            <feComposite operator='over'
-              in='shadow' in2='SourceGraphic'/>
+            <feComposite operator="over"
+              in="shadow" in2="SourceGraphic"/>
           </filter>
 
           <symbol id="text">
@@ -117,20 +117,20 @@
     background-repeat: no-repeat;
     background-position:  50% 0;
     // Mobile maket by default
-    background-image: url( 'img/320.png' );
+    background-image: url( "img/320.png" );
   }
   // Tablet
   @media (min-width: 760px) {
     HTML {
       // Tablet maket
-      background-image: url( 'img/760.png' );
+      background-image: url( "img/760.png" );
     }
   }
   // Desktop
   @media (min-width: 960px) {
     HTML {
       // Desktop maket
-      background-image: url( 'img/960.png' );
+      background-image: url( "img/960.png" );
     }
   }
 </style>
