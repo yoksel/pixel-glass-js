@@ -233,7 +233,7 @@ H2:first-child {
   right: 2px;
   bottom: 2px;
   left: 2px;
-  outline: 2px solid white;
+  outline: 3px solid white;
   pointer-events: none;
 }
 
