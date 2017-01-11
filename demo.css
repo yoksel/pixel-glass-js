@@ -9,7 +9,7 @@ BODY {
   transition: all .5s;
 }
 
-P:last-child {
+P:last-of-type {
   margin-bottom: 0;
 }
 
@@ -109,7 +109,7 @@ H2:first-child {
 
 .page-wrapper {
   max-width: 100%;
-  padding: 2rem 1.5rem 3rem;
+  padding: 3rem 1.5rem;
   box-sizing: border-box;
   background: #FFF;
   box-shadow: 0 3px 7px 3px hsla(0,0%,0%,.4);
@@ -141,14 +141,28 @@ H2:first-child {
 --------------------------------------------- */
 
 .page-header {
+  position: relative;
   margin-bottom: 3rem;
   box-sizing: border-box;
   text-align: center;
 }
 
-@media ( min-width: 600px ) {
+/* Hides thin transparent lines on the edges of the logo */
+.page-header::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  outline: 2px solid white;
+  pointer-events: none;
+}
+
+@media ( min-width: 500px ) {
   .page-header {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -174,7 +188,7 @@ H2:first-child {
 --------------------------------------------- */
 
 .page-container {
-  margin: 3rem auto;
+  margin: 0 auto;
 }
 
 @media ( min-width: 600px ) {
@@ -259,6 +273,7 @@ H2:first-child {
 
 /* STICKY POINT
 --------------------------------------------- */
+
 .sticky-container {
   width: 100%;
 }
@@ -274,13 +289,13 @@ H2:first-child {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
   box-shadow: inset 0 3px 7px 3px hsla(0,0%,0%,.3);
   border-radius: 10px;
 }
 
 .sticky-container--filled .sticky-point {
   min-height: 65px;
+  margin-top: 1rem;
 }
 
 .sticky-container--collapse .sticky-point {
@@ -305,6 +320,7 @@ H2:first-child {
   }
   100% {
     min-height: 0;
+    margin-top: 0;
     margin-left: 50%;
     margin-right: 50%;
   }

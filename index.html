@@ -36,24 +36,17 @@
       viewBox="0 0 770 110">
         <defs>
           <filter id="inset-shadow">
-            <!-- Shadow Offset -->
             <feOffset dx="0" dy="3"/>
-            <!-- Shadow Blur -->
             <feGaussianBlur stdDeviation="3"
               result="offset-blur"/>
-            <!-- Invert the drop shadow
-                 to create an inner shadow -->
             <feComposite operator="out"
               in="SourceGraphic" in2="offset-blur"
               result="inverse"/>
-            <!-- Color & Opacity -->
-            <feFlood flood-color="white" flood-opacity=".25"
+            <feFlood flood-color="white" flood-opacity=".2"
               result="color"/>
-            <!-- Clip color inside shadow -->
             <feComposite operator="in"
               in="color" in2="inverse"
               result="shadow"/>
-            <!-- Put shadow over original object -->
             <feComposite operator="over"
               in="shadow" in2="SourceGraphic"/>
           </filter>
@@ -84,20 +77,18 @@
         <section class="section section--what-is">
           <h2 class="section__title">What is it?</h2>
 
-          <p><b>Pixel Glass</b> is tiny Javascript file, which can help you check how your markup fits your mock-ups. No need jump to graphical editor and back, no need to leave page every time when you need to look at the maket.</p>
+          <p><b>Pixel Glass</b> is tiny Javascript library, which can help you check how your markup fits your designs. No need to jump to graphical editor and back, no need to leave page every time when you need to look at the design.</p>
 
-          <p> It will be very helpful if you make an adaptive design and have more then one mock-ups of the page.</p>
+          <p>It will be very helpful if you make an adaptive design and have more than one design of the page.</p>
         </section>
 
         <section class="section section--how-works">
           <h2 class="section__title">How does it work?</h2>
 
-          <div class="page-aside__content">
-            <b>Pixel Glass</b> just lets you control an opacity of the body of your page. When <code class="code code--inline">body</code> becomes semi-transparent, you can see mock-ups through it.
+          <p><b>Pixel Glass</b> just lets you control an opacity of the body of your page. When the <code class="code code--inline">body</code> becomes semi-transparent, you can see designs through it.</p>
 
-            <div class="sticky-container">
-              <div class="sticky-point"></div>
-            </div>
+          <div class="sticky-container">
+            <div class="sticky-point"></div>
           </div>
         </section>
 
@@ -105,7 +96,7 @@
           <h2 class="section__title">How to use Pixel Glass in your project?</h2>
 
           <ol>
-            <li>Clone a repo with the script into your project folder:
+            <li>Clone a <a href="https://github.com/yoksel/pixel-glass-js/">repo</a> with the script into your project folder:
 <pre><code class="code code--block">git clone git@github.com:yoksel/pixel-glass-js.git</code></pre>            </li>
             <li>
               Place your mock-ups into your project inside folder <code class="code code--inline">img</code> or any other folder you like.
@@ -138,7 +129,7 @@
 &lt;!-- // Pixel Glass -->
 </code></pre>
 
-          Adjust this code to make it fits to your project: change mediaqueries or add yours, change image urls to actual files.
+          Adjust this code to make it fits to your project: change media queries or add yours, change image urls to actual files.
             </li>
             <li>Save file, update a page and enjoy!</li>
           </ol>
