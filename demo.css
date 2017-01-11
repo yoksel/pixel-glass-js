@@ -42,7 +42,7 @@ A:hover {
 @media ( min-width: 1000px ) {
   A,
   A:visited {
-    color: hsl(270,70%,60%);
+    color: hsl(270,70%,50%);
   }
 }
 
