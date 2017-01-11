@@ -99,7 +99,10 @@ function pixelGlass() {
       if( stickyPoint && !localStorage['pg-released'] ) {
         targetElem = stickyPoint;
       }
+      // Override defaults for demo page
+      currents.state = 'off';
     }
+
     controlsPanel = doc.createElement('div');
     controlsPanel.classList.add(panelClass);
     targetElem.appendChild(controlsPanel);
