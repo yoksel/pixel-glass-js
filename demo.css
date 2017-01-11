@@ -47,6 +47,77 @@ A:hover {
   }
 }
 
+/* MARK
+--------------------------------------------- */
+
+MARK {
+  position: relative;
+  background: hsla(10,95%,60%,.5);
+}
+
+MARK:before,
+MARK:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: .55em;
+  height: 100%;
+}
+
+MARK:before {
+  left: -.55em;
+  background: linear-gradient(to right bottom,
+     transparent 50%,hsla(10,95%,60%,.5)  50%);
+}
+
+MARK:after {
+  right: -.55em;
+  background: linear-gradient(to left top,
+     transparent 50%,hsla(10,95%,60%,.5)  50%);
+}
+
+@media ( min-width: 600px ) {
+  MARK {
+    background: hsla(80,70%,40%,.5);
+  }
+  MARK:before {
+    background: linear-gradient(to right bottom,
+       transparent 50%,hsla(80,70%,40%,.5) 50%);
+  }
+  MARK:after {
+    background: linear-gradient(to left top,
+       transparent 50%,hsla(80,70%,40%,.5) 50%);
+  }
+}
+
+@media ( min-width: 800px ) {
+  MARK {
+    background: hsla(200,80%,40%,.5);
+  }
+  MARK:before {
+    background: linear-gradient(to right bottom,
+       transparent 50%,hsla(200,80%,40%,.5) 50%);
+  }
+  MARK:after {
+    background: linear-gradient(to left top,
+       transparent 50%,hsla(200,80%,40%,.5) 50%);
+  }
+}
+
+@media ( min-width: 1000px ) {
+  MARK {
+    background: hsla(270,70%,50%,.5);
+  }
+  MARK:before {
+    background: linear-gradient(to right bottom,
+       transparent 50%,hsla(270,70%,50%,.5) 50%);
+  }
+  MARK:after {
+    background: linear-gradient(to left top,
+       transparent 50%,hsla(270,70%,50%,.5) 50%);
+  }
+}
+
 /* LISTS
 --------------------------------------------- */
 
