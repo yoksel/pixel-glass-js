@@ -74,7 +74,7 @@
         <section class="section section--what-is">
           <h2 class="section__title">What is it?</h2>
 
-          <p><b>Pixel Glass</b> is tiny Javascript library, which can help you check how your markup fits your designs. No need to jump to graphical editor and back, no need to leave page every time when you need to look at the design.</p>
+          <p><b>Pixel Glass</b> is a tiny JavaScript library, it can help you to check out how your markup fits your design. No need to jump to graphical editor and back, no need to leave page every time when you need to look at the design.</p>
 
           <p>It will be very helpful if you make an adaptive design and have more than one design of the page.</p>
         </section>
@@ -82,7 +82,7 @@
         <section class="section section--how-works">
           <h2 class="section__title">How does it work?</h2>
 
-          <p><b>Pixel Glass</b> just lets you control an opacity of the body of your page. When the <code class="code code--inline">body</code> becomes semi-transparent, you can see designs through it.</p>
+          <p><b>Pixel Glass</b> just lets you control your page’s <code class="code code--inline">&lt;body></code> opacity. When the <code class="code code--inline">&lt;body></code> becomes semi-transparent, you can see designs through it.</p>
 
           <div class="sticky-container">
             <div class="sticky-point"></div>
@@ -94,30 +94,30 @@
 
           <ol>
             <li>Clone a <a href="https://github.com/yoksel/pixel-glass-js/">repo</a> with the script into your project folder:
-<pre><code class="code code--block">git clone git@github.com:yoksel/pixel-glass-js.git</code></pre>            </li>
+<pre><code class="code code--block">git clone git@github.com:yoksel/pixel-glass-js.git</code></pre>                      </li>
             <li>
-              Place your mock-ups into your project inside folder <code class="code code--inline">img</code> or any other folder you like.
+              Place your mock-ups into <code class="code code--inline">img</code> folder of your project.
             </li>
-            <li> Add this code into element <code class="code code--inline">head</code> of your pages:
+            <li> Add this code into <code class="code code--inline">&lt;head></code> element of your page:
 <pre><code class="code code--block">&lt;!-- Pixel Glass -->
 &lt;style>
   HTML {
     background-repeat: no-repeat;
     background-position:  50% 0;
-    // Mobile maket by default
+    // Mobile layout by default
     background-image: url( "img/320.png" );
   }
   // Tablet
   @media (min-width: 760px) {
     HTML {
-      // Tablet maket
+      // Tablet layout
       background-image: url( "img/760.png" );
     }
   }
   // Desktop
   @media (min-width: 960px) {
     HTML {
-      // Desktop maket
+      // Desktop layout
       background-image: url( "img/960.png" );
     }
   }
@@ -126,12 +126,10 @@
 &lt;!-- // Pixel Glass -->
 </code></pre>
 
-          Adjust this code to make it fits to your project: change media queries or add yours, change image urls to actual files.
+          Adjust this code to make it fit your project: change media queries or add yours, change image URLs to actual files.
             </li>
             <li>Save file, update a page and enjoy!</li>
           </ol>
-
-
         </section>
       </main>
     </div>

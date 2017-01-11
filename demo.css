@@ -5,6 +5,7 @@ HTML {
 BODY {
   margin: 0;
   padding: 0;
+  opacity: 1;
   font: 16px/1.4 Trebuchet MS, Arial, sans-serif;
   transition: all .5s;
 }
