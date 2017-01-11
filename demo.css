@@ -9,6 +9,10 @@ BODY {
   transition: all .5s;
 }
 
+P:last-child {
+  margin-bottom: 0;
+}
+
 /* LINKS
 --------------------------------------------- */
 
@@ -105,16 +109,16 @@ H2:first-child {
 
 .page-wrapper {
   max-width: 100%;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem 3rem;
   box-sizing: border-box;
   background: #FFF;
   box-shadow: 0 3px 7px 3px hsla(0,0%,0%,.4);
   transition: all 1s;
 }
 
-@media ( min-width: 500px ) {
+@media ( min-width: 600px ) {
   .page-wrapper {
-    padding: 3rem 1.5rem;
+    padding: 3rem 2rem;
   }
 }
 
@@ -122,7 +126,6 @@ H2:first-child {
   .page-wrapper {
     margin-left: 2rem;
     margin-right: 2rem;
-    padding: 3rem 2rem;
   }
 }
 
@@ -256,6 +259,16 @@ H2:first-child {
 
 /* STICKY POINT
 --------------------------------------------- */
+.sticky-container {
+  width: 100%;
+}
+.sticky-container--filled:after {
+  content: 'Click "On" and try it in action!';
+  display: block;
+  min-height: 1rem;
+  overflow: hidden;
+  margin-top: 1rem;
+}
 
 .sticky-point {
   display: flex;
@@ -264,38 +277,48 @@ H2:first-child {
   margin-top: 1rem;
   box-shadow: inset 0 3px 7px 3px hsla(0,0%,0%,.3);
   border-radius: 10px;
-  transition: all 1s;
 }
 
-.sticky-point--filled {
-  padding: 1rem;
-  min-height: 30px;
+.sticky-container--filled .sticky-point {
+  min-height: 65px;
 }
 
-.sticky-point--collapse {
-  animation: collapse 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+.sticky-container--collapse .sticky-point {
+  animation: collapse-point 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation-fill-mode: forwards;
+}
+
+.sticky-container--collapse:after {
+  animation: collapse-text .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   animation-fill-mode: forwards;
 }
 
 .sticky-point .controls-panel {
   position: static;
+  margin: 1rem auto;
   transform: none;
 }
 
-@keyframes collapse {
-  30% {
-    min-height: 0;
-  }
+@keyframes collapse-point {
   50% {
-    min-height: 0;
-    margin-left: 50%;
-    margin-right: 50%;
+    min-height: 10px;
   }
   100% {
     min-height: 0;
     margin-left: 50%;
     margin-right: 50%;
-    padding: 0;
+  }
+}
+
+@keyframes collapse-text {
+  50% {
+    min-height: 10px;
+  }
+  100% {
+    min-height: 0;
+    margin-top: 0;
+    opacity: 0;
+    font-size: 0;
   }
 }
 
@@ -304,7 +327,6 @@ H2:first-child {
 
 .page-footer {
   margin-top: 2rem;
-  margin-bottom: 3rem;
 }
 
 .page-footer::before {

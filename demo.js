@@ -1,5 +1,5 @@
 var doc = document;
-var stickyPoint = doc.querySelector('.sticky-point');
+var stickyContainer = doc.querySelector('.sticky-container');
 
 if ( !localStorage['pg-released'] ) {
   searchControlsPanel();
@@ -9,10 +9,11 @@ function searchControlsPanel() {
   controlsPanel = doc.querySelector('.controls-panel');
 
   if ( !controlsPanel ) {
-    setTimeout(searchControlsPanel, 1000);
+    setTimeout(searchControlsPanel, 500);
   }
   else {
-    stickyPoint.classList.add('sticky-point--filled');
+    stickyContainer.classList.add('sticky-container--filled');
+
     controlsPanel.addEventListener('click', takeOutPanel);
   }
 }
@@ -32,7 +33,7 @@ function takeOutPanel () {
 
   doc.documentElement.appendChild( controlsPanel );
 
-  stickyPoint.classList.add('sticky-point--collapse');
+  stickyContainer.classList.add('sticky-container--collapse');
 
   controlsPanel.removeEventListener('click', takeOutPanel);
   localStorage['pg-released'] = 'yes';
