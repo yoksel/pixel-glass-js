@@ -174,14 +174,8 @@ H2:first-child {
 
 .page-header__logo {
   width: 100%;
-}
-
-.page-header__logo-text {
   font-size: 14rem;
   font-family: 'Work Sans', sans-serif;
-}
-.page-nav A {
-  color: #FFF;
 }
 
 /* CONTAINER
