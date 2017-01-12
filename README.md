@@ -1,16 +1,16 @@
 # Pixel Glass
 
-## EN | [RU &darr;](https://github.com/yoksel/pixel-glass-js#user-content-ru--en-)
+**EN** | <a href="https://github.com/yoksel/pixel-glass-js#user-content-ru" id="en">RU </a>
 
 **Pixel Glass** is a tiny JavaScript library, it can help you to check out how your markup fits your design. No need to jump to graphical editor and back, no need to leave page every time when you need to look at the design.
 
 It will be very helpful if you make an adaptive design and have more than one design of the page.
 
-### How does it work?
+## How does it work?
 
 **Pixel Glass** just lets you control your page’s `<body>` opacity. When the `<body>` becomes semi-transparent, you can see designs through it.
 
-### How to use Pixel Glass in your project?
+## How to use Pixel Glass in your project?
 
 1. Clone a repo with the script into your project folder:
 
@@ -54,7 +54,7 @@ It will be very helpful if you make an adaptive design and have more than one de
 
 ----
 
-## RU | [EN &uarr;](https://github.com/yoksel/pixel-glass-js#user-content-en--ru-)
+<a href="https://github.com/yoksel/pixel-glass-js#user-content-en" id="ru">EN &uarr;</a> | **RU**
 
 **Pixel Glass** — маленькая библиотека на JavaScript, которая может помочь вам проверить насколько разметка страницы соответствует макету, без необходимости запускать графический редактор или уходить со страницы всякий раз, когда вам нужно свериться с макетом.
 
