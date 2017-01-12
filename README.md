@@ -54,7 +54,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 4. Save file, update a page and enjoy!
 
-----
+![alt ](https://img-fotki.yandex.ru/get/98645/5091629.a4/0_92172_e7f58c62_orig)
 
 <a href="https://github.com/yoksel/pixel-glass-js#user-content-en" id="ru">EN &uarr;</a> | **RU**
 
@@ -109,3 +109,5 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
   Отредактируйте код под ваш проект: настройте медиавыражения, поменяйте адреса картинок на рабочие.
 
 4. Сохраните файл, обновите страницу и пользуйтесь! : )
+
+![alt ](https://img-fotki.yandex.ru/get/98645/5091629.a4/0_92172_e7f58c62_orig)
