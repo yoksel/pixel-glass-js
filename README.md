@@ -46,7 +46,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
       }
     }
   </style>
-  <script src="pixel-glass-js/cript.js"></script>
+  <script src="pixel-glass-js/script.js"></script>
   <!-- // Pixel Glass -->
   ```
 
@@ -102,7 +102,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
       }
     }
   </style>
-  <script src="pixel-glass-js/cript.js"></script>
+  <script src="pixel-glass-js/script.js"></script>
   <!-- // Pixel Glass -->
   ```
 
