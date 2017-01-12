@@ -16,7 +16,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 1. Clone a repo with the script into your project folder:
 
-  ```git clone git@github.com:yoksel/pixel-glass-js.git```
+  ```git clone git@github.com:yoksel/pixel-glass-js.git --depth=1```
 
 2. Place your mock-ups into img (or any other) folder of your project.
 
@@ -72,7 +72,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 1. Клонируйте репозиторий в папку с проектом:
 
-  ```git clone git@github.com:yoksel/pixel-glass-js.git```
+  ```git clone git@github.com:yoksel/pixel-glass-js.git --depth=1```
 
 2. Поместите макеты страниц в ваш проект в папку `img` (или в другую, какая вам нравится).
 
@@ -105,7 +105,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
   <script src="pixel-glass-js/cript.js"></script>
   <!-- // Pixel Glass -->
   ```
-  
+
   Отредактируйте код под ваш проект: настройте медиавыражения, поменяйте адреса картинок на рабочие.
 
 4. Сохраните файл, обновите страницу и пользуйтесь! : )
