@@ -1,6 +1,6 @@
 # Pixel Glass
 
-**EN** | <a href="https://github.com/yoksel/pixel-glass-js#user-content-ru" id="en">RU </a>
+**EN** | <a href="https://github.com/yoksel/pixel-glass-js#user-content-ru" id="en">RU &darr;</a>
 
 **Pixel Glass** is a tiny JavaScript library, it can help you to check out how your markup fits your design. No need to jump to graphical editor and back, no need to leave page every time when you need to look at the design.
 
