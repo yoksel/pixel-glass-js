@@ -7,7 +7,6 @@ BODY {
   padding: 0;
   opacity: 1;
   font: 16px/1.4 Trebuchet MS, Arial, sans-serif;
-  transition: all .5s;
 }
 
 P:last-of-type {
