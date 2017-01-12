@@ -10,6 +10,8 @@ It will be very helpful if you make an adaptive design and have more than one de
 
 **Pixel Glass** just lets you control your page’s `<body>` opacity. When the `<body>` becomes semi-transparent, you can see designs through it.
 
+Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
+
 ## How to use Pixel Glass in your project?
 
 1. Clone a repo with the script into your project folder:
@@ -63,6 +65,8 @@ It will be very helpful if you make an adaptive design and have more than one de
 ### Как это рабтает?
 
 **Pixel Glass** просто управляет прозрачностью элемента `<body>`. Когда `<body>` становится полупрозрачным, через него становятся видны макеты, заданные фоном для `<html>`.
+
+Посмотрите в действии на [**демо-странице**](https://yoksel.github.io/pixel-glass-js/).
 
 ### Как использовать Pixel Glass в своём проекте?
 
