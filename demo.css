@@ -350,6 +350,7 @@ H2:first-child {
 .sticky-container {
   width: 100%;
 }
+
 .sticky-container--filled:after {
   content: 'Click "On" and try it in action!';
   display: block;
@@ -364,6 +365,7 @@ H2:first-child {
   align-items: center;
   box-shadow: inset 0 3px 7px 3px hsla(0,0%,0%,.3);
   border-radius: 10px;
+  transition: all .1s;
 }
 
 .sticky-container--filled .sticky-point {
