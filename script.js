@@ -85,7 +85,7 @@ function pixelGlass() {
   function init() {
     addExternalCSS();
     createContolsPanel();
-    applyCurrents();
+    applyCurrentData();
   }
 
   //---------------------------------------------
@@ -180,9 +180,11 @@ function pixelGlass() {
 
       if (canDisableAll && canDisableAll === true) {
         if (currentVal === 'off'){
+          removeCurrentStyles();
           disableInputs();
         }
         else {
+          applyCurrentStyles();
           enableInputs();
         }
       }
@@ -339,7 +341,7 @@ function pixelGlass() {
 
   //---------------------------------------------
 
-  function applyCurrents() {
+  function applyCurrentData() {
     for (var key in targets ) {
       var target = targets[ key ];
       var current = currents[ key ];
@@ -347,13 +349,34 @@ function pixelGlass() {
       if (target.attr === 'data') {
         target.elem.dataset[ key ] = current;
       }
-      else if (target.attr === 'style') {
-        target.elem.style[ key ] = current;
-      }
     }
 
     if(currents.state === 'off') {
       disableInputs();
+    }
+  }
+  //---------------------------------------------
+
+  function applyCurrentStyles() {
+    for (var key in targets ) {
+      var target = targets[ key ];
+      var current = currents[ key ];
+
+      if (target.attr === 'style') {
+        target.elem.style[ key ] = current;
+      }
+    }
+  }
+
+  //---------------------------------------------
+
+  function removeCurrentStyles() {
+    for (var key in targets ) {
+      var target = targets[ key ];
+
+      if (target.attr === 'style') {
+        target.elem.style[ key ] = '';
+      }
     }
   }
 
