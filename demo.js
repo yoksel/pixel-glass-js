@@ -1,6 +1,9 @@
 var doc = document;
 var stickyContainer = doc.querySelector('.sticky-container');
 
+// Drop all saved params, for demo purposes only
+clearLocalStorage();
+
 if ( !localStorage['pg-released'] ) {
   searchControlsPanel();
 }
@@ -36,7 +39,9 @@ function takeOutPanel () {
   stickyContainer.classList.add('sticky-container--collapse');
 
   controlsPanel.removeEventListener('click', takeOutPanel);
-  localStorage['pg-released'] = 'yes';
+
+  // Switch off keeping state of the panel
+  // localStorage['pg-released'] = 'yes';
 }
 
 //---------------------------------------------
@@ -57,4 +62,22 @@ function adjustPosition() {
     controlsPanel.style.bottom = styles.bottom;
     controlsPanel.style.top = 'auto';
   }
+}
+
+//---------------------------------------------
+
+function clearLocalStorage() {
+  var list = ['pg-filter',
+              'pg-opacity',
+              'pg-bottom',
+              'pg-top',
+              'pg-left',
+              'pg-right',
+              'pg-state',
+              'pg-released'
+              ];
+
+  list.forEach( function ( item ) {
+    delete localStorage[ item ];
+  });
 }
