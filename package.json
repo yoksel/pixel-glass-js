@@ -1,0 +1,19 @@
+{
+  "name": "pixel-glass",
+  "version": "1.0.5",
+  "description": "Tiny JS library for visual checking markup",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yoksel/pixel-glass-js.git"
+  },
+  "author": "yoksel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yoksel/pixel-glass-js/issues"
+  },
+  "homepage": "https://yoksel.github.io/pixel-glass-js/"
+}

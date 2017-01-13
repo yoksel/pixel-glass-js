@@ -14,45 +14,47 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 ## How to use Pixel Glass in your project?
 
-1. Clone a repo with the script into your project folder:
+**1.** Clone a repo with the script into your project folder:
 
-  ```git clone git@github.com:yoksel/pixel-glass-js.git --depth=1```
-
-2. Place your mock-ups into img (or any other) folder of your project.
-
-3. Add this code into `<head>` element of your page:
-
-  ```html
-  <!-- Pixel Glass -->
-  <style>
-    HTML {
-      background-repeat: no-repeat;
-      background-position:  50% 0;
-      /* Mobile layout by default */
-      background-image: url( "img/320.png" );
-    }
-    /* Tablet */
-    @media ( min-width: 760px ) {
-      HTML {
-        /* Tablet layout */
-        background-image: url( "img/760.png" );
-      }
-    }
-    /* Desktop */
-    @media ( min-width: 960px ) {
-      HTML {
-        /* Desktop layout */
-        background-image: url( "img/960.png" );
-      }
-    }
-  </style>
-  <script src="pixel-glass-js/script.js"></script>
-  <!-- // Pixel Glass -->
+  ```shell
+  npm i pixel-glass --save-dev
   ```
+
+**2.** Place your mock-ups into img (or any other) folder of your project.
+
+**3.** Add this code into `<head>` element of your page:
+
+    ```html
+    <!-- Pixel Glass -->
+    <style>
+      HTML {
+        background-repeat: no-repeat;
+        background-position:  50% 0;
+        /* Mobile layout by default */
+        background-image: url( "img/320.png" );
+      }
+      /* Tablet */
+      @media ( min-width: 760px ) {
+        HTML {
+          /* Tablet layout */
+          background-image: url( "img/760.png" );
+        }
+      }
+      /* Desktop */
+      @media ( min-width: 960px ) {
+        HTML {
+          /* Desktop layout */
+          background-image: url( "img/960.png" );
+        }
+      }
+    </style>
+    <script src="../node_modules/pixel-glass/script.js"></script>
+    <!-- // Pixel Glass -->
+    ```
 
   Edit the code to make it fit your project: change media queries or add yours, change image URLs to actual files.
 
-4. Save file, update a page and enjoy!
+**4.** Save file, update a page and enjoy!
 
 ![alt ](https://img-fotki.yandex.ru/get/50623/5091629.a4/0_92173_27b6855f_orig)
 
@@ -70,44 +72,46 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 ## Как использовать Pixel Glass в своём проекте?
 
-1. Клонируйте репозиторий в папку с проектом:
+**1.** Клонируйте репозиторий в папку с проектом:
 
-  ```git clone git@github.com:yoksel/pixel-glass-js.git --depth=1```
-
-2. Поместите макеты страниц в ваш проект в папку `img` (или в другую, какая вам нравится).
-
-3. Добавьте этот код на вашу страницу в элемент `<head>`:
-
-  ```html
-  <!-- Pixel Glass -->
-  <style>
-    HTML {
-      background-repeat: no-repeat;
-      background-position:  50% 0;
-      /* По умолчанию показывается мобильный макет */
-      background-image: url( "img/320.png" );
-    }
-    /* Планшет */
-    @media ( min-width: 760px ) {
-      HTML {
-        /* Планшетный макет */
-        background-image: url( "img/760.png" );
-      }
-    }
-    /* Десктоп */
-    @media ( min-width: 960px ) {
-      HTML {
-        /* Десктопный макет */
-        background-image: url( "img/960.png" );
-      }
-    }
-  </style>
-  <script src="pixel-glass-js/script.js"></script>
-  <!-- // Pixel Glass -->
+  ```shell
+  npm i pixel-glass --save-dev
   ```
+
+**2.** Поместите макеты страниц в ваш проект в папку `img` (или в другую, какая вам нравится).
+
+**3.** Добавьте этот код на вашу страницу в элемент `<head>`:
+
+    ```html
+    <!-- Pixel Glass -->
+    <style>
+      HTML {
+        background-repeat: no-repeat;
+        background-position:  50% 0;
+        /* По умолчанию показывается мобильный макет */
+        background-image: url( "img/320.png" );
+      }
+      /* Планшет */
+      @media ( min-width: 760px ) {
+        HTML {
+          /* Планшетный макет */
+          background-image: url( "img/760.png" );
+        }
+      }
+      /* Десктоп */
+      @media ( min-width: 960px ) {
+        HTML {
+          /* Десктопный макет */
+          background-image: url( "img/960.png" );
+        }
+      }
+    </style>
+    <script src="../node_modules/pixel-glass/script.js"></script>
+    <!-- // Pixel Glass -->
+    ```
 
   Отредактируйте код под ваш проект: настройте медиавыражения, поменяйте адреса картинок на рабочие.
 
-4. Сохраните файл, обновите страницу и пользуйтесь! : )
+**4.** Сохраните файл, обновите страницу и пользуйтесь! : )
 
 ![alt ](https://img-fotki.yandex.ru/get/50623/5091629.a4/0_92173_27b6855f_orig)
