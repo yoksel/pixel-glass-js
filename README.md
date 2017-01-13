@@ -24,33 +24,33 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 **3.** Add this code into `<head>` element of your page:
 
-    ```html
-    <!-- Pixel Glass -->
-    <style>
+  ```html
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+      background-repeat: no-repeat;
+      background-position:  50% 0;
+      /* Mobile layout by default */
+      background-image: url( "img/320.png" );
+    }
+    /* Tablet */
+    @media ( min-width: 760px ) {
       HTML {
-        background-repeat: no-repeat;
-        background-position:  50% 0;
-        /* Mobile layout by default */
-        background-image: url( "img/320.png" );
+        /* Tablet layout */
+        background-image: url( "img/760.png" );
       }
-      /* Tablet */
-      @media ( min-width: 760px ) {
-        HTML {
-          /* Tablet layout */
-          background-image: url( "img/760.png" );
-        }
+    }
+    /* Desktop */
+    @media ( min-width: 960px ) {
+      HTML {
+        /* Desktop layout */
+        background-image: url( "img/960.png" );
       }
-      /* Desktop */
-      @media ( min-width: 960px ) {
-        HTML {
-          /* Desktop layout */
-          background-image: url( "img/960.png" );
-        }
-      }
-    </style>
-    <script src="../node_modules/pixel-glass/script.js"></script>
-    <!-- // Pixel Glass -->
-    ```
+    }
+  </style>
+  <script src="../node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
+  ```
 
   Edit the code to make it fit your project: change media queries or add yours, change image URLs to actual files.
 
@@ -82,33 +82,33 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 **3.** Добавьте этот код на вашу страницу в элемент `<head>`:
 
-    ```html
-    <!-- Pixel Glass -->
-    <style>
+  ```html
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+      background-repeat: no-repeat;
+      background-position:  50% 0;
+      /* По умолчанию показывается мобильный макет */
+      background-image: url( "img/320.png" );
+    }
+    /* Планшет */
+    @media ( min-width: 760px ) {
       HTML {
-        background-repeat: no-repeat;
-        background-position:  50% 0;
-        /* По умолчанию показывается мобильный макет */
-        background-image: url( "img/320.png" );
+        /* Планшетный макет */
+        background-image: url( "img/760.png" );
       }
-      /* Планшет */
-      @media ( min-width: 760px ) {
-        HTML {
-          /* Планшетный макет */
-          background-image: url( "img/760.png" );
-        }
+    }
+    /* Десктоп */
+    @media ( min-width: 960px ) {
+      HTML {
+        /* Десктопный макет */
+        background-image: url( "img/960.png" );
       }
-      /* Десктоп */
-      @media ( min-width: 960px ) {
-        HTML {
-          /* Десктопный макет */
-          background-image: url( "img/960.png" );
-        }
-      }
-    </style>
-    <script src="../node_modules/pixel-glass/script.js"></script>
-    <!-- // Pixel Glass -->
-    ```
+    }
+  </style>
+  <script src="../node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
+  ```
 
   Отредактируйте код под ваш проект: настройте медиавыражения, поменяйте адреса картинок на рабочие.
 
