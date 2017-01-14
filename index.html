@@ -25,6 +25,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script>
   <!-- PixelGlass END -->
 </head>
@@ -93,8 +94,8 @@
           <h2 class="section__title">How to use Pixel Glass in your project?</h2>
 
           <ol>
-            <li>Clone a <a href="https://github.com/yoksel/pixel-glass-js/">repo</a> with the script into your project folder:
-<pre><code class="code code--block">git clone git@github.com:yoksel/pixel-glass-js.git --depth=1</code></pre>
+            <li>Install package into your project folder via npm:
+<pre><code class="code code--block">npm i pixel-glass --save-dev</code></pre>
             </li>
             <li>
               Place your mock-ups into <code class="code code--inline">img</code> (or any other) folder of your project.
@@ -123,7 +124,8 @@
     }
   }
 &lt;/style>
-&lt;script src="pixel-glass-js/script.js">&lt;/script>
+&lt;link href="../node_modules/pixel-glass/styles.css" rel="stylesheet">
+&lt;script src="../node_modules/pixel-glass/script.js"></script>
 <span class="code__comment">&lt;!-- // Pixel Glass --></span>
 </code></pre>
 
