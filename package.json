@@ -1,6 +1,6 @@
 {
   "name": "pixel-glass",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Tiny JS library for visual checking markup",
   "main": "script.js",
   "scripts": {
