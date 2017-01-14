@@ -1,6 +1,6 @@
 # Pixel Glass
 
-**EN** | <a href="https://github.com/yoksel/pixel-glass-js#user-content-ru" id="en">RU &darr;</a>
+<a id="en">**EN**</a> | [RU &darr;](#ru)
 
 **Pixel Glass** is a tiny JavaScript library, it can help you to check out how your markup fits your design. No need to jump to graphical editor and back, no need to leave page every time when you need to look at the design.
 
@@ -58,7 +58,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 ![alt ](https://img-fotki.yandex.ru/get/50623/5091629.a4/0_92173_27b6855f_orig)
 
-<a href="https://github.com/yoksel/pixel-glass-js#user-content-en" id="ru">EN &uarr;</a> | **RU**
+[EN &uarr;](#en) | <a id="ru">**RU**</a>
 
 **Pixel Glass** — маленькая библиотека на JavaScript, которая поможет вам проверить насколько разметка страницы соответствует макету, без необходимости запускать графический редактор или уходить со страницы всякий раз, когда вам нужно свериться с макетом.
 
