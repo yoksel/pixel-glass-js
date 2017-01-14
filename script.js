@@ -86,6 +86,10 @@ function pixelGlass() {
     addExternalCSS();
     createContolsPanel();
     applyCurrentData();
+
+    if (currents.state === 'on'){
+      applyCurrentStyles();
+    }
   }
 
   //---------------------------------------------
@@ -334,7 +338,7 @@ function pixelGlass() {
     var styleElem = doc.createElement('style');
     var cssLink = doc.createElement('link');
     cssLink.setAttribute('rel', 'stylesheet');
-    cssLink.setAttribute('href', '../pixel-glass/styles.css');
+    cssLink.setAttribute('href', '../pixel-glass-js/styles.css');
 
     doc.head.appendChild(cssLink);
   }
