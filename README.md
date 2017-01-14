@@ -48,7 +48,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
       }
     }
   </style>
-  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <link href="../node_modules/pixel-glass/styles.css" rel="stylesheet">
   <script src="../node_modules/pixel-glass/script.js"></script>
   <!-- // Pixel Glass -->
   ```
@@ -65,7 +65,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 Она будет полезна, если вы верстаете адаптивный дизайн и у вас есть несколько макетов для разных разрешений экрана.
 
-## Как это рабтает?
+## Как это работает?
 
 **Pixel Glass** просто управляет прозрачностью элемента `<body>`. Когда `<body>` становится полупрозрачным, через него становятся видны макеты, заданные фоном для `<html>`.
 
@@ -107,7 +107,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
       }
     }
   </style>
-  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <link href="../node_modules/pixel-glass/styles.css" rel="stylesheet">
   <script src="../node_modules/pixel-glass/script.js"></script>
   <!-- // Pixel Glass -->
   ```
