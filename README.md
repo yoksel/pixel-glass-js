@@ -14,7 +14,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 ## How to use Pixel Glass in your project?
 
-**1.** Clone a repo with the script into your project folder:
+**1.** Install package into your project folder via npm:
 
   ```shell
   npm i pixel-glass --save-dev
@@ -73,7 +73,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 ## Как использовать Pixel Glass в своём проекте?
 
-**1.** Клонируйте репозиторий в папку с проектом:
+**1.** Установите пакет в папку с проектом через npm:
 
   ```shell
   npm i pixel-glass --save-dev
