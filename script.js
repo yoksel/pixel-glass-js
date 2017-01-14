@@ -83,9 +83,12 @@ function pixelGlass() {
   //---------------------------------------------
 
   function init() {
-    addExternalCSS();
     createContolsPanel();
     applyCurrentData();
+
+    if (currents.state === 'on'){
+      applyCurrentStyles();
+    }
   }
 
   //---------------------------------------------
@@ -330,11 +333,12 @@ function pixelGlass() {
 
   //---------------------------------------------
 
+  // Not used
   function addExternalCSS() {
     var styleElem = doc.createElement('style');
     var cssLink = doc.createElement('link');
     cssLink.setAttribute('rel', 'stylesheet');
-    cssLink.setAttribute('href', '../node_modules/pixel-glass/styles.css');
+    cssLink.setAttribute('href', '../pixel-glass-js/styles.css');
 
     doc.head.appendChild(cssLink);
   }

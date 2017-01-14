@@ -1,6 +1,6 @@
 # Pixel Glass
 
-**EN** | <a href="https://github.com/yoksel/pixel-glass-js#user-content-ru" id="en">RU &darr;</a>
+<a id="en">**EN**</a> | [RU &darr;](#ru)
 
 **Pixel Glass** is a tiny JavaScript library, it can help you to check out how your markup fits your design. No need to jump to graphical editor and back, no need to leave page every time when you need to look at the design.
 
@@ -24,33 +24,34 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 **3.** Add this code into `<head>` element of your page:
 
-    ```html
-    <!-- Pixel Glass -->
-    <style>
+  ```html
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+      background-repeat: no-repeat;
+      background-position:  50% 0;
+      /* Mobile layout by default */
+      background-image: url( "img/320.png" );
+    }
+    /* Tablet */
+    @media ( min-width: 760px ) {
       HTML {
-        background-repeat: no-repeat;
-        background-position:  50% 0;
-        /* Mobile layout by default */
-        background-image: url( "img/320.png" );
+        /* Tablet layout */
+        background-image: url( "img/760.png" );
       }
-      /* Tablet */
-      @media ( min-width: 760px ) {
-        HTML {
-          /* Tablet layout */
-          background-image: url( "img/760.png" );
-        }
+    }
+    /* Desktop */
+    @media ( min-width: 960px ) {
+      HTML {
+        /* Desktop layout */
+        background-image: url( "img/960.png" );
       }
-      /* Desktop */
-      @media ( min-width: 960px ) {
-        HTML {
-          /* Desktop layout */
-          background-image: url( "img/960.png" );
-        }
-      }
-    </style>
-    <script src="../node_modules/pixel-glass/script.js"></script>
-    <!-- // Pixel Glass -->
-    ```
+    }
+  </style>
+  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <script src="../node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
+  ```
 
   Edit the code to make it fit your project: change media queries or add yours, change image URLs to actual files.
 
@@ -58,7 +59,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 ![alt ](https://img-fotki.yandex.ru/get/50623/5091629.a4/0_92173_27b6855f_orig)
 
-<a href="https://github.com/yoksel/pixel-glass-js#user-content-en" id="ru">EN &uarr;</a> | **RU**
+[EN &uarr;](#en) | <a id="ru">**RU**</a>
 
 **Pixel Glass** — маленькая библиотека на JavaScript, которая поможет вам проверить насколько разметка страницы соответствует макету, без необходимости запускать графический редактор или уходить со страницы всякий раз, когда вам нужно свериться с макетом.
 
@@ -82,33 +83,34 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 
 **3.** Добавьте этот код на вашу страницу в элемент `<head>`:
 
-    ```html
-    <!-- Pixel Glass -->
-    <style>
+  ```html
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+      background-repeat: no-repeat;
+      background-position:  50% 0;
+      /* По умолчанию показывается мобильный макет */
+      background-image: url( "img/320.png" );
+    }
+    /* Планшет */
+    @media ( min-width: 760px ) {
       HTML {
-        background-repeat: no-repeat;
-        background-position:  50% 0;
-        /* По умолчанию показывается мобильный макет */
-        background-image: url( "img/320.png" );
+        /* Планшетный макет */
+        background-image: url( "img/760.png" );
       }
-      /* Планшет */
-      @media ( min-width: 760px ) {
-        HTML {
-          /* Планшетный макет */
-          background-image: url( "img/760.png" );
-        }
+    }
+    /* Десктоп */
+    @media ( min-width: 960px ) {
+      HTML {
+        /* Десктопный макет */
+        background-image: url( "img/960.png" );
       }
-      /* Десктоп */
-      @media ( min-width: 960px ) {
-        HTML {
-          /* Десктопный макет */
-          background-image: url( "img/960.png" );
-        }
-      }
-    </style>
-    <script src="../node_modules/pixel-glass/script.js"></script>
-    <!-- // Pixel Glass -->
-    ```
+    }
+  </style>
+  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <script src="../node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
+  ```
 
   Отредактируйте код под ваш проект: настройте медиавыражения, поменяйте адреса картинок на рабочие.
 
