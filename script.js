@@ -83,7 +83,6 @@ function pixelGlass() {
   //---------------------------------------------
 
   function init() {
-    addExternalCSS();
     createContolsPanel();
     applyCurrentData();
 
@@ -334,6 +333,7 @@ function pixelGlass() {
 
   //---------------------------------------------
 
+  // Not used
   function addExternalCSS() {
     var styleElem = doc.createElement('style');
     var cssLink = doc.createElement('link');

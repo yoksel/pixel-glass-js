@@ -17,7 +17,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 **1.** Clone a repo with the script into your project folder:
 
   ```shell
-  git clone git@github.com:yoksel/pixel-glass-js.git --depth=1
+  npm i pixel-glass --save-dev
   ```
 
 **2.** Place your mock-ups into img (or any other) folder of your project.
@@ -48,7 +48,8 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
       }
     }
   </style>
-  <script src="pixel-glass-js/script.js"></script>
+  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <script src="../node_modules/pixel-glass/script.js"></script>
   <!-- // Pixel Glass -->
   ```
 
@@ -75,7 +76,7 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
 **1.** Клонируйте репозиторий в папку с проектом:
 
   ```shell
-  git clone git@github.com:yoksel/pixel-glass-js.git --depth=1
+  npm i pixel-glass --save-dev
   ```
 
 **2.** Поместите макеты страниц в ваш проект в папку `img` (или в другую, какая вам нравится).
@@ -106,7 +107,8 @@ Try it on the [**demo page**](https://yoksel.github.io/pixel-glass-js/).
       }
     }
   </style>
-  <script src="pixel-glass-js/script.js"></script>
+  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <script src="../node_modules/pixel-glass/script.js"></script>
   <!-- // Pixel Glass -->
   ```
 
