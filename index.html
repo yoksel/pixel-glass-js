@@ -39,20 +39,21 @@
     <header class="page-header">
       <h1 class="page-title visuallyhidden">Pixel Glass</h1>
       <svg class="svg page-header__logo"
-      viewBox="0 0 770 120" role="img" aria-label="logo">
+        viewBox="0 0 770 120" xmlns="http://www.w3.org/2000/svg"
+        role="img" aria-label="logo">
         <defs>
           <filter id="inset-shadow">
-            <feOffset dx="0" dy="3"/>
+            <feOffset dx="0" dy="3"></feOffset>
             <feGaussianBlur stdDeviation="4"
-              result="offset-blur"/>
+              result="offset-blur"></feGaussianBlur>
             <feComposite operator="out"
               in="SourceGraphic" in2="offset-blur"
-              result="inverse"/>
+              result="inverse"></feComposite>
             <feFlood flood-color="black" flood-opacity=".6"
-              result="color"/>
+              result="color"></feFlood>
             <feComposite operator="in"
               in="color" in2="inverse"
-              result="shadow"/>
+              result="shadow"></feComposite>
           </filter>
 
           <symbol id="text">
@@ -63,14 +64,14 @@
 
           <mask id="mask-text-hole">
             <rect width="100%" height="100%"
-              fill="white"/>
-              <use xlink:href="#text" fill="black"/>
+              fill="white"></rect>
+              <use xlink:href="#text" fill="black"></use>
           </mask>
         </defs>
 
         <rect width="100%" height="100%"
-          fill="white"  mask="url(#mask-text-hole)"/>
-        <use xlink:href="#text" fill="black" filter="url(#inset-shadow)"/>
+          fill="white"  mask="url(#mask-text-hole)"></rect>
+        <use xlink:href="#text" fill="black" filter="url(#inset-shadow)"></use>
       </svg>
     </header>
 
