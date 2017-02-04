@@ -1,8 +1,9 @@
 {
   "name": "pixel-glass",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Tiny JS library for visual checking markup",
   "main": "script.js",
+  "style": "styles.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
