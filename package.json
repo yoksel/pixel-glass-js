@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/yoksel/pixel-glass-js/issues"
   },
-  "homepage": "https://yoksel.github.io/pixel-glass-js/"
+  "homepage": "https://yoksel.github.io/pixel-glass-js/",
+  "dependencies": {
+    "browser-sync": "^2.18.7",
+    "gulp": "^3.9.1"
+  }
 }
