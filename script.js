@@ -148,7 +148,8 @@ function pixelGlass() {
 
     var id = itemName;
     var input = doc.createElement(elemTag);
-    input.classList.add(panelClass + '__control', panelClass + '__control--' + type);
+    input.classList.add(panelClass + '__control'); // IE10 fixes
+    input.classList.add(panelClass + '__control--' + type);
     input.setAttribute('type', type);
     input.setAttribute('id', id);
     setData( input, 'state-num', currentNum );
@@ -206,7 +207,8 @@ function pixelGlass() {
 
     var id = itemName;
     var input = doc.createElement('input');
-    input.classList.add(panelClass + '__control', panelClass + '__control--' + type);
+    input.classList.add(panelClass + '__control'); // IE10 fixes
+    input.classList.add(panelClass + '__control--' + type);
     input.setAttribute('type', type);
     input.setAttribute('id', id);
 
@@ -233,8 +235,10 @@ function pixelGlass() {
 
   function createDragButton() {
     var input = doc.createElement('button');
-    input.classList.add(panelClass + '__control', panelClass + '__control--drag-n-drop');
+    input.classList.add(panelClass + '__control'); // IE10 fixes
+    input.classList.add(panelClass + '__control--drag-n-drop');
     input.setAttribute('type', 'button');
+    input.innerHTML = ' ';
 
     controlsPanel.appendChild(input);
 
