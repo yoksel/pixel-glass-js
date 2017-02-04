@@ -96,7 +96,7 @@ function pixelGlass() {
   function createContolsPanel() {
     var targetElem = doc.documentElement;
 
-    if ( doc.body.dataset.hasStickyPoint !== undefined ) {
+    if ( hasData( doc.body, 'has-sticky-point' ) ) {
       var stickyPoint = doc.querySelector('.sticky-point');
 
       if( stickyPoint && !localStorage['pg-released'] ) {
@@ -151,7 +151,7 @@ function pixelGlass() {
     input.classList.add(panelClass + '__control', panelClass + '__control--' + type);
     input.setAttribute('type', type);
     input.setAttribute('id', id);
-    input.dataset.stateNum = currentNum;
+    setData( input, 'state-num', currentNum );
 
     if ( attrs ) {
       for (var attr in attrs) {
@@ -177,8 +177,9 @@ function pixelGlass() {
       currentNum = +!currentNum;
       currentVal = list[currentNum];
 
-      input.dataset.stateNum = currentNum;
-      params.target.elem.dataset[itemName] = currentVal;
+      setData( input, 'state-num', currentNum );
+      setData( params.target.elem, itemName, currentVal );
+
       saveLocalStorage(itemName, currentVal);
 
       if (canDisableAll && canDisableAll === true) {
@@ -351,7 +352,7 @@ function pixelGlass() {
       var current = currents[ key ];
 
       if (target.attr === 'data') {
-        target.elem.dataset[ key ] = current;
+        setData( target.elem, key, current );
       }
     }
 
@@ -384,6 +385,34 @@ function pixelGlass() {
     }
   }
 
+  //---------------------------------------------
+
+  // Made for support IE10, it doesn't support dataset
+
+  function hasData( elem, dataName ) {
+    if ( !elem ) {
+      return false;
+    }
+
+    dataName = 'data-' + dataName;
+
+    if ( elem.getAttribute( 'data-' + dataName) !== undefined ) {
+      return true;
+    }
+
+    return false;
+  }
+
+  //---------------------------------------------
+
+  function setData( elem, dataName, dataVal ) {
+    if ( !elem ) {
+      return;
+    }
+
+    dataName = 'data-' + dataName;
+    elem.setAttribute( dataName, dataVal );
+  }
   //---------------------------------------------
 }
 
