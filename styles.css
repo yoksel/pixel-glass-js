@@ -45,6 +45,7 @@ BODY[data-filter="invert"] {
   border: 2px solid hsla(0,0%,0%,.25);
   border-radius: 5px;
   outline: none;
+  vertical-align: middle;
   font: inherit;
 }
 .controls-panel__control:focus {
@@ -94,6 +95,7 @@ BODY[data-filter="invert"] {
 .controls-panel__control--drag-n-drop {
   position: relative;
   width: 19px;
+  min-height: 1.8em; /* IE10 fixes */
   margin: 0;
   padding: 0;
   background: transparent;
