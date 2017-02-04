@@ -434,7 +434,7 @@ function pixelGlass() {
       return;
     }
 
-    if ( classes.lenght > 0 ) {
+    if ( classes.length > 0 ) {
       classes.forEach( function ( className ) {
         elem.classList.add( className );
       });
