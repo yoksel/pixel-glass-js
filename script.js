@@ -406,7 +406,7 @@ function pixelGlass() {
 
     dataName = 'data-' + dataName;
 
-    if ( elem.getAttribute( 'data-' + dataName) !== undefined ) {
+    if ( elem.getAttribute( dataName) !== undefined && elem.getAttribute( dataName) !== null ) {
       return true;
     }
 
